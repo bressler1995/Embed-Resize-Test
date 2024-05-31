@@ -4,3 +4,10 @@ iframe {
     margin: 0;
     max-width: 100%;
 }
+
+.container {
+    display: block;
+    width: 100%;
+    max-width: 768px;
+    margin: 0 auto;
+}
