@@ -587,8 +587,13 @@
 });
 //# sourceMappingURL=/sm/1c56cdd7eda14563100cbe3d56f489c5ab421fd638b173e094428f89ef87cfb4.map
 
-iframeResize({ 
-    license: "GPLv3"
-    },
-    '#topsEmbed'
-);
+document.addEventListener("DOMContentLoaded", function() {
+    setTimeout(function() {
+        console.log("TOPS Canvas: Attempting to resize...");
+        iframeResize({ 
+            license: "GPLv3"
+            },
+            '#topsEmbed'
+        );
+    }, 3000);
+});
