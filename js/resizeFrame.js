@@ -600,12 +600,20 @@ $(document).ready(() => {
   
     $('#login_form').append(added_html_and_text);
 
-    setTimeout(function() {
-        console.log("TOPS Canvas: Attempting to resize...");
+    let iframe = document.createElement('iframe');
+    iframe.onload = function() { 
+        alert('iframe loaded! Attempting insertion...'); 
+
         iframeResize({ 
             license: "GPLv3"
             },
             '#topsEmbed'
         );
-    }, 3000);
+    };
+
+    let topsEmbed_holder = document.getElementById("topsEmbed_holder");
+    iframe.id = "topsEmbed";
+    iframe.src = "https://developer.nasa.gov/pages/Transform-to-Open-Science/open-science-101/#/Canvas" + topsEmbed_holder.innerHTML;
+    topsEmbed_holder.innerHTML = "";
+    topsEmbed_holder.appendChild(iframe);
 });
