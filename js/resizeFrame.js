@@ -614,11 +614,13 @@ window.addEventListener('load', function () {
         );
     };
 
-    let topsEmbed_holder = document.getElementById("topsEmbed_holder");
-    console.log(topsEmbed_holder);
-    iframe.style = "width:100%";
-    iframe.id = "topsEmbed";
-    iframe.src = "https://developer.nasa.gov/pages/Transform-to-Open-Science/open-science-101/#/Canvas" + topsEmbed_holder.innerHTML;
-    topsEmbed_holder.innerHTML = "";
-    topsEmbed_holder.appendChild(iframe);
+    setTimeout(function(){
+        let topsEmbed_holder = document.getElementById("topsEmbed_holder");
+        console.log(topsEmbed_holder);
+        iframe.style = "width:100%";
+        iframe.id = "topsEmbed";
+        iframe.src = "https://developer.nasa.gov/pages/Transform-to-Open-Science/open-science-101/#/Canvas" + topsEmbed_holder.dataset.link;
+        topsEmbed_holder.innerHTML = "";
+        topsEmbed_holder.appendChild(iframe);
+    }, 2000);
 });
