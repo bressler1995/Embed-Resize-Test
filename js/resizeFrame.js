@@ -608,7 +608,8 @@ window.addEventListener('load', function () {
         console.log('iframe loaded! Attempting insertion...');
 
         iframeResize({ 
-            license: "GPLv3"
+            license: "GPLv3",
+            checkOrigin: false
             },
             '#topsEmbed'
         );
@@ -622,5 +623,5 @@ window.addEventListener('load', function () {
         iframe.src = "https://nasastem.instructure.com/files/74421/download/#/Canvas" + topsEmbed_holder.dataset.link;
         topsEmbed_holder.innerHTML = "";
         topsEmbed_holder.appendChild(iframe);
-    }, 2000);
+    }, 1000);
 });
